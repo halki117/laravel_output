@@ -13,7 +13,7 @@
               <div class="form-group">
                 <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
               </div>
-              <input type="submit" value="送信します" class="btn btn-primary">
+              <input type="submit" value="送信" class="btn btn-primary">
             </form>
           </div>
         </div>
