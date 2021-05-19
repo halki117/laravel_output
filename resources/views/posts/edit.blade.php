@@ -6,18 +6,18 @@
       <div class="col-6">
         <div class="card">
           <div class="card-body">
-            <form action="{{ route('posts.create') }}" method="POST">
+            <form action="{{ route('posts.update', $post->id) }}" method="POST">
               @csrf
               <div class="form-group">
                 <label for="name" class="col-form-label">{{ __('name') }}</label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" class="form-control" value="{{ $post->name }}">
                 @error('name')
                   <span  class="err_msg" role="alert"><strong>{{ $message }}</strong></span>
                 @enderror
               </div>
               <div class="form-group">
                 <label for="name" class="col-form-label">{{ __('content') }}</label>
-                <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
+                <textarea name="content" id="" cols="30" rows="10" class="form-control">{{ $post->content }}</textarea>
                 @error('content')
                   <span  class="err_msg" role="alert"><strong>{{ $message }}</strong></span>
                 @enderror
