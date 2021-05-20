@@ -26,9 +26,20 @@ class PostsController extends Controller
         ]);
 
         $post = new Post;
-        $post->fill($request->all())->save;
+        $post->fill($request->all())->save();
 
         return redirect('/posts')->with('flash_message', __('Resistered'));
+    }
+
+    public function show($id)
+    {
+        if(!ctype_digit($id)){
+            return redirect('/posts/new')->with('flash_message', __('Invalid operation was perfomed.'));
+        }
+
+        $post = Post::find($id);
+
+        return view('posts.show', ['post' => $post]);
     }
 
     public function edit($id)
@@ -51,5 +62,16 @@ class PostsController extends Controller
         $post->fill($request->all())->save;
 
         return redirect('/posts')->with('flash_message', __('Resistered'));
+    }
+
+    public function destroy($id)
+    {
+        if(!ctype_digit($id)){
+            return redirect('/posts/new')->with('flash_message', __('Invalid operation was perfomed.'));
+        }
+
+        Post::find($id)->delete();
+
+        return redirect('/posts')->with('flash_message', __('Deleted'));
     }
 }

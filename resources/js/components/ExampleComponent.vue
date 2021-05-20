@@ -1,17 +1,12 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="col-6 mx-auto">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="post-title">{{ name }}</h3>
+      <p class="post-content">{{ content }}</p>
     </div>
+  </div>
+</div>   
 </template>
 
 <script>
