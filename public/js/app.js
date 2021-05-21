@@ -1966,9 +1966,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
+  // mounted() {
+  //     console.log('Component mounted.')
+  // }
+  props: ['name', 'content', 'posts'],
+  data: function data() {
+    return {
+      hoge: "HOGE"
+    };
+  },
+  computed: {
+    HogeCall: function HogeCall() {
+      return this.hoge + "です";
+    },
+    NameCall: function NameCall() {
+      return this.name + "です";
+    }
   }
 });
 
@@ -37640,7 +37660,15 @@ var render = function() {
       _c("div", { staticClass: "card-body" }, [
         _c("h3", { staticClass: "post-title" }, [_vm._v(_vm._s(_vm.name))]),
         _vm._v(" "),
-        _c("p", { staticClass: "post-content" }, [_vm._v(_vm._s(_vm.content))])
+        _c("p", { staticClass: "post-content" }, [_vm._v(_vm._s(_vm.content))]),
+        _vm._v(" "),
+        _c("p", [_vm._v("taaaaaa")]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.hoge))]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.HogeCall))]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.NameCall))])
       ])
     ])
   ])

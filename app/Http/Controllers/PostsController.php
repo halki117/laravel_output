@@ -39,7 +39,10 @@ class PostsController extends Controller
 
         $post = Post::find($id);
 
-        return view('posts.show', ['post' => $post]);
+        // 後で消す
+        $posts = Post::all();
+
+        return view('posts.show', ['post' => $post, 'posts' => $posts]);
     }
 
     public function edit($id)
